@@ -1,5 +1,9 @@
 # HW1_數據預處理報告
 
+<p class="text-right">
+財金碩一 313707011 涂銥娗
+</p>
+
 ## 數據集描述
 
 ### Bankruptcy數據集
