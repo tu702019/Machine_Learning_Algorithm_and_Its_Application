@@ -87,8 +87,8 @@ df_bankruptcy_balanced["Bankrupt?"] = y_resampled
 
 #### 採用的方法：過濾法（Filter Method）
 本研究採用的是過濾法（Filter Method）進行特徵選擇。過濾法是一種獨立於後續機器學習算法的特徵選擇方法，它基於統計指標評估每個特徵與目標變數的關係強度，然後選擇得分最高的特徵。
-- **Bankruptcy數據集**：使用ANOVA F-value（F檢驗）選擇特徵
-- **Diamonds數據集**：使用F回歸統計量選擇特徵
+- **Bankruptcy數據集**：分類問題使用 ANOVA F-value（F檢驗） `f_classif` ，因其能評估類別間特徵差異
+- **Diamonds數據集**：回歸問題使用F回歸統計量 `f_regression` ，專注於特徵與連續目標變數的線性關係
 
 #### 過濾法的特點：
 - **定義**：過濾法是一種獨立於後續機器學習算法的特徵選擇方法，它基於統計指標評估每個特徵與目標變數的關係強度，然後選擇得分最高的特徵
@@ -117,6 +117,7 @@ X_diamonds_selected = selector_diamonds.fit_transform(X_diamonds_encoded, y_diam
 ```
 
 #### 選擇前50%特徵的理由：
+透過 `SelectKBest` 實作，取得評分後保留前 50% 特徵作為訓練依據。
 1. **平衡計算複雜度與模型性能**：減少特徵數量可降低計算成本和過擬合風險
 2. **實驗性選擇**：50%是實踐中常用的起點，可在不大幅降低性能的情況下減少特徵數
 3. **適用於高維數據**：對於Bankruptcy數據集（95個特徵），特徵選擇尤為重要
