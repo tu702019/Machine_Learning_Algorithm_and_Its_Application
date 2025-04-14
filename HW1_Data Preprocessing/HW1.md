@@ -12,6 +12,15 @@
 - **規模**：53,940筆資料，12個特徵
 - **缺失值**：共9,924個缺失值，分布在10個特徵中
 
+#### 實現代碼：
+```python
+# 步驟1：探索數據集
+print(f"數據集形狀: {df_bankruptcy.shape}")
+print("\n缺失值統計:")
+print(df_bankruptcy.isnull().sum().sum(), "個缺失值")
+print(df_bankruptcy.isnull().sum()[df_bankruptcy.isnull().sum() > 0])
+```
+
 ## 預處理方法與實現
 
 ### 1. 缺失值處理
