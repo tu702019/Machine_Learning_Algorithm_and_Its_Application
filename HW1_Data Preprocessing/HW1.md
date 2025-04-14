@@ -14,7 +14,7 @@
 
 #### 實現代碼：
 ```python
-# 步驟1：探索數據集
+# 探索數據集
 print(f"數據集形狀: {df_bankruptcy.shape}")
 print("\n缺失值統計:")
 print(df_bankruptcy.isnull().sum().sum(), "個缺失值")
